@@ -1,4 +1,4 @@
-/* ============================================================
+﻿/* ============================================================
    YASSER ATHOUMANI — Site Vitrine Personnel
    Identité visuelle ORRENT · Vert #02C39A · Noir #0D0D0D
    ============================================================ */
@@ -467,11 +467,10 @@ input, textarea, select { font-family: inherit; }
   height: 1.625rem;
   border-radius: 50%;
   background: rgba(0,0,0,0.12);
-  font-size: 0.8125rem;
-  line-height: 1;
   transition: transform 0.35s var(--bounce);
   flex-shrink: 0;
 }
+.btn-icon svg { display: block; }
 .btn-icon-inv { background: rgba(255,255,255,0.12); }
 .btn:hover .btn-icon { transform: translate(2px,-2px) scale(1.1); }
 
@@ -1460,4 +1459,37 @@ input, textarea, select { font-family: inherit; }
   .avatar-shell { width: 150px; height: 150px; }
   .avatar-initials { font-size: 2.5rem; }
   .social-grid { grid-template-columns: 1fr; }
+}
+
+
+/* === ORRENT PROJECT BRAND BUTTONS === */
+.project-brand-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.875rem;
+  border-radius: var(--r-pill);
+  font-size: 0.775rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s var(--spring);
+  border: 1px solid transparent;
+}
+.project-btn-ig {
+  background: rgba(214, 36, 159, 0.1);
+  color: #e1306c;
+  border-color: rgba(214, 36, 159, 0.2);
+}
+.project-btn-ig:hover {
+  background: rgba(214, 36, 159, 0.18);
+  transform: translateY(-2px);
+}
+.project-btn-li {
+  background: rgba(0, 119, 181, 0.1);
+  color: #0077b5;
+  border-color: rgba(0, 119, 181, 0.2);
+}
+.project-btn-li:hover {
+  background: rgba(0, 119, 181, 0.18);
+  transform: translateY(-2px);
 }
