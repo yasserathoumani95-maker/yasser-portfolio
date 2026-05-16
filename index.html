@@ -93,7 +93,9 @@
       <div class="hero-image reveal">
         <div class="avatar-shell">
           <div class="avatar-core">
-            <img src="assets/profil.png" alt="Yasser Athoumani — Community Manager">
+            <img src="assets/profil.png" alt="Yasser Athoumani — Community Manager"
+                 onerror="this.style.display='none';document.getElementById('avatarFallback').style.display='flex'">
+            <div class="avatar-initials" id="avatarFallback" style="display:none">YA</div>
           </div>
         </div>
         <div class="hero-badge">
