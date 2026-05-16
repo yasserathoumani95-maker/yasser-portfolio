@@ -136,6 +136,38 @@ input, textarea, select { font-family: inherit; }
 }
 .nav-cta:hover { background: var(--green-dark) !important; }
 
+/* Nav avatar — mobile only */
+.nav-avatar-mobile {
+  display: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1.5px solid rgba(2,195,154,0.45);
+  background: #141414;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 3px rgba(2,195,154,0.09);
+}
+.nav-avatar-mobile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 50%;
+  display: block;
+}
+.nav-avatar-initials {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 0.7rem;
+  color: var(--green);
+  letter-spacing: -0.02em;
+  align-items: center;
+  justify-content: center;
+}
+
 /* Hamburger */
 .hamburger {
   display: none;
@@ -1388,14 +1420,15 @@ input, textarea, select { font-family: inherit; }
   .section   { padding: 4.5rem 0; }
 
   /* Nav */
-  .nav-links  { display: none; }
-  .hamburger  { display: flex; }
+  .nav-links        { display: none; }
+  .hamburger        { display: flex; }
+  .nav-avatar-mobile { display: flex; }
 
   /* Hero */
   .hero-container {
     grid-template-columns: 1fr;
     text-align: center;
-    padding-top: 7rem;
+    padding-top: 9rem;
     padding-bottom: 4rem;
     gap: 2.5rem;
   }
