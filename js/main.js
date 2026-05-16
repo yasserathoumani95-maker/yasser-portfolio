@@ -8,6 +8,8 @@ const navbar        = document.getElementById('navbar');
 const hamburger     = document.getElementById('hamburger');
 const mobileOverlay = document.getElementById('mobileOverlay');
 const backToTop     = document.getElementById('backToTop');
+const mobileBackdrop = document.getElementById('mobileBackdrop');
+const mobileClose    = document.getElementById('mobileClose');
 const typewriterEl  = document.getElementById('typewriter');
 const contactForm   = document.getElementById('contactForm');
 const formSuccess   = document.getElementById('formSuccess');
@@ -16,8 +18,8 @@ const submitBtn     = document.getElementById('submitBtn');
 
 /* === TYPEWRITER === */
 const phrases = [
+  'Consultant en Marketing Digital',
   'Community Manager',
-  'Chargé de Marketing Digital',
   "Fondateur d'ORRENT"
 ];
 let phraseIdx  = 0;
@@ -99,6 +101,7 @@ if (langSection) langObserver.observe(langSection);
 function openMenu() {
   hamburger.classList.add('open');
   mobileOverlay.classList.add('open');
+  mobileBackdrop.classList.add('open');
   document.body.style.overflow = 'hidden';
   hamburger.setAttribute('aria-expanded', 'true');
 }
@@ -106,6 +109,7 @@ function openMenu() {
 function closeMenu() {
   hamburger.classList.remove('open');
   mobileOverlay.classList.remove('open');
+  mobileBackdrop.classList.remove('open');
   document.body.style.overflow = '';
   hamburger.setAttribute('aria-expanded', 'false');
 }
@@ -114,13 +118,11 @@ hamburger.addEventListener('click', () => {
   hamburger.classList.contains('open') ? closeMenu() : openMenu();
 });
 
+if (mobileClose) mobileClose.addEventListener('click', closeMenu);
+mobileBackdrop.addEventListener('click', closeMenu);
+
 document.querySelectorAll('.mobile-link').forEach((link) => {
   link.addEventListener('click', closeMenu);
-});
-
-// Close overlay on outside click
-mobileOverlay.addEventListener('click', (e) => {
-  if (e.target === mobileOverlay) closeMenu();
 });
 
 // Close on Escape
