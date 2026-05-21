@@ -154,37 +154,23 @@ backToTop.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-/* === CONTACT FORM === */
+/* === CONTACT FORM — mailto === */
 if (contactForm) {
-  contactForm.addEventListener('submit', async (e) => {
+  contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const originalHTML = submitBtn.innerHTML;
-    submitBtn.innerHTML = '<span>Envoi en cours…</span>';
-    submitBtn.disabled  = true;
-    formSuccess.hidden  = true;
-    formError.hidden    = true;
+    const name    = document.getElementById('name').value.trim();
+    const email   = document.getElementById('email').value.trim();
+    const sujet   = document.getElementById('sujet').value.trim();
+    const message = document.getElementById('message').value.trim();
 
-    try {
-      const res = await fetch(contactForm.action, {
-        method:  'POST',
-        body:    new FormData(contactForm),
-        headers: { 'Accept': 'application/json' }
-      });
+    const subject = encodeURIComponent(`[Portfolio] ${sujet} — ${name}`);
+    const body    = encodeURIComponent(`Nom : ${name}\nEmail : ${email}\n\n${message}`);
 
-      if (res.ok) {
-        contactForm.reset();
-        formSuccess.hidden = false;
-        setTimeout(() => { formSuccess.hidden = true; }, 6000);
-      } else {
-        formError.hidden = false;
-      }
-    } catch {
-      formError.hidden = false;
-    } finally {
-      submitBtn.innerHTML = originalHTML;
-      submitBtn.disabled  = false;
-    }
+    formSuccess.hidden = false;
+    setTimeout(() => { formSuccess.hidden = true; }, 5000);
+
+    window.location.href = `mailto:athoumaniyas@gmail.com?subject=${subject}&body=${body}`;
   });
 }
 
@@ -199,6 +185,44 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     window.scrollTo({ top, behavior: 'smooth' });
   });
 });
+
+/* === STATS COUNTERS === */
+function animateCounter(el, target, duration) {
+  let start = null;
+  function step(ts) {
+    if (!start) start = ts;
+    const progress = Math.min((ts - start) / duration, 1);
+    el.textContent = Math.floor(progress * target);
+    if (progress < 1) requestAnimationFrame(step);
+    else el.textContent = target;
+  }
+  requestAnimationFrame(step);
+}
+
+const statsObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.querySelectorAll('.stat-number').forEach(el => {
+        animateCounter(el, parseInt(el.dataset.target, 10), 1500);
+      });
+      statsObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+
+const statsGrid = document.querySelector('.stats-grid');
+if (statsGrid) statsObserver.observe(statsGrid);
+
+/* === CHAR COUNTER === */
+const textarea    = document.getElementById('message');
+const charCounter = document.getElementById('charCounter');
+if (textarea && charCounter) {
+  textarea.addEventListener('input', () => {
+    const len = textarea.value.length;
+    charCounter.textContent = `${len} / 500`;
+    charCounter.style.color = len > 450 ? '#dc2626' : 'rgba(0,0,0,0.3)';
+  });
+}
 
 /* === INIT === */
 window.addEventListener('scroll', onScroll, { passive: true });

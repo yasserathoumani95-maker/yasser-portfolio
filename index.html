@@ -3,14 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Yasser Athoumani — Community Manager & Chargé de Marketing Digital | Tunis, Tunisie">
-  <meta name="keywords" content="Yasser Athoumani, Community Manager, Marketing Digital, Tunis, ORRENT">
-  <meta property="og:title" content="Yasser Athoumani — Community Manager & Marketing Digital">
-  <meta property="og:description" content="Fondateur d'ORRENT. Je construis des stratégies qui connectent les marques à leur audience.">
+  <meta name="description" content="Yasser Athoumani, consultant en marketing digital et fondateur d'ORRENT. Community management, stratégie de contenu, campagnes digitales — basé à Tunis.">
+  <meta name="keywords" content="Yasser Athoumani, Community Manager, Marketing Digital, Tunis, ORRENT, Stratégie Contenu, Meta Ads, SEO">
+  <link rel="canonical" href="https://yasserathoumani95-maker.github.io/yasser-portfolio/">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230D0D0D'/><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='system-ui,sans-serif' font-weight='900' font-size='14' fill='%2302C39A'>YA</text></svg>">
+  <meta property="og:type"         content="profile">
+  <meta property="og:title"        content="Yasser Athoumani — Community Manager & Marketing Digital">
+  <meta property="og:description"  content="Fondateur d'ORRENT. Je construis des stratégies qui connectent les marques à leur audience.">
+  <meta property="og:url"          content="https://yasserathoumani95-maker.github.io/yasser-portfolio/">
+  <meta property="og:image"        content="https://yasserathoumani95-maker.github.io/yasser-portfolio/assets/profil.png">
+  <meta property="og:locale"       content="fr_FR">
+  <meta property="og:site_name"    content="Yasser Athoumani">
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Yasser Athoumani — Community Manager & Marketing Digital">
+  <meta name="twitter:description" content="Fondateur d'ORRENT. Je construis des stratégies qui connectent les marques à leur audience.">
+  <meta name="twitter:image"       content="https://yasserathoumani95-maker.github.io/yasser-portfolio/assets/profil.png">
   <title>Yasser Athoumani — Community Manager & Marketing Digital</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -26,12 +37,13 @@
         <li><a href="#apropos">À Propos</a></li>
         <li><a href="#competences">Compétences</a></li>
         <li><a href="#experiences">Expériences</a></li>
+        <li><a href="#temoignages">Témoignages</a></li>
         <li><a href="#portfolio">Portfolio</a></li>
         <li><a href="#processus">Processus</a></li>
         <li><a href="#engagements">Engagements</a></li>
         <li><a href="#contact" class="nav-cta">Contact</a></li>
       </ul>
-      <button class="hamburger" id="hamburger" aria-label="Ouvrir le menu">
+      <button class="hamburger" id="hamburger" aria-label="Ouvrir le menu" aria-expanded="false">
         <span class="bar bar-1"></span>
         <span class="bar bar-2"></span>
         <span class="bar bar-3"></span>
@@ -54,6 +66,7 @@
       <li><a href="#apropos" class="mobile-link">À Propos</a></li>
       <li><a href="#competences" class="mobile-link">Compétences</a></li>
       <li><a href="#experiences" class="mobile-link">Expériences</a></li>
+      <li><a href="#temoignages" class="mobile-link">Témoignages</a></li>
       <li><a href="#portfolio" class="mobile-link">Portfolio</a></li>
       <li><a href="#processus" class="mobile-link">Processus</a></li>
       <li><a href="#engagements" class="mobile-link">Engagements</a></li>
@@ -95,6 +108,17 @@
             <span class="btn-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
           </a>
         </div>
+        <div class="services-strip" aria-hidden="true">
+          <span class="services-pill">Community Management</span>
+          <span class="services-dot">·</span>
+          <span class="services-pill">Stratégie de Contenu</span>
+          <span class="services-dot">·</span>
+          <span class="services-pill">Meta Ads</span>
+          <span class="services-dot">·</span>
+          <span class="services-pill">Création Web</span>
+          <span class="services-dot">·</span>
+          <span class="services-pill">Audit Digital</span>
+        </div>
         <div class="social-strip">
           <a href="https://www.linkedin.com/in/athoumani-yasser/" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
             <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -112,15 +136,19 @@
       <div class="hero-image reveal">
         <div class="avatar-shell">
           <div class="avatar-core">
-            <img src="assets/profil.png" alt="Yasser Athoumani — Community Manager"
-                 onerror="this.style.display='none';document.getElementById('avatarFallback').style.display='flex'">
+            <picture>
+              <source srcset="assets/profil.webp" type="image/webp">
+              <img src="assets/profil.png" alt="Yasser Athoumani — Consultant en Marketing Digital"
+                   fetchpriority="high" decoding="async" width="340" height="340"
+                   onerror="this.style.display='none';document.getElementById('avatarFallback').style.display='flex'">
+            </picture>
             <div class="avatar-initials" id="avatarFallback" style="display:none">YA</div>
           </div>
         </div>
-        <div class="hero-badge">
+        <a href="#contact" class="hero-badge">
           <span class="badge-dot"></span>
           <span>Disponible pour missions</span>
-        </div>
+        </a>
       </div>
 
     </div>
@@ -192,6 +220,38 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CHIFFRES CLÉS ===== -->
+  <section class="section stats-section section-dark">
+    <div class="container">
+      <div class="stats-grid reveal">
+        <div class="stat-item">
+          <div class="stat-number-wrap">
+            <span class="stat-number" data-target="4">0</span><span class="stat-suffix">+</span>
+          </div>
+          <span class="stat-label">Expériences professionnelles</span>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number-wrap">
+            <span class="stat-number" data-target="3">0</span>
+          </div>
+          <span class="stat-label">Associations dirigées</span>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number-wrap">
+            <span class="stat-number" data-target="2">0</span><span class="stat-suffix">+</span>
+          </div>
+          <span class="stat-label">Années d'expérience</span>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number-wrap">
+            <span class="stat-number" data-target="100">0</span><span class="stat-suffix">%</span>
+          </div>
+          <span class="stat-label">Engagé sur chaque mission</span>
         </div>
       </div>
     </div>
@@ -391,6 +451,42 @@
     </div>
   </section>
 
+  <!-- ===== TÉMOIGNAGES ===== -->
+  <section id="temoignages" class="section section-light">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow eyebrow-dark">Ils me font confiance</span>
+        <h2 class="section-title section-title-dark">Témoi<span class="title-accent">gnages</span></h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal">
+          <div class="testimonial-card-inner">
+            <p class="testimonial-quote">"Yasser a piloté notre stratégie digitale avec rigueur et créativité. Son implication et sa capacité à analyser les données ont permis d'améliorer nos performances en ligne de façon significative."</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">GW</div>
+              <div>
+                <span class="testimonial-name">Responsable — Gangway World Studies</span>
+                <span class="testimonial-role">Stage · Déc. 2024</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal">
+          <div class="testimonial-card-inner">
+            <p class="testimonial-quote">"Un leader naturel, organisé et à l'écoute. Yasser a coordonné notre projet événementiel avec professionnalisme, en veillant à la cohésion de l'équipe tout au long du processus."</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">CP</div>
+              <div>
+                <span class="testimonial-name">Collège de Paris — Campus Tunis</span>
+                <span class="testimonial-role">Business Week · Nov. 2024</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ===== PORTFOLIO & CV ===== -->
   <section id="portfolio" class="section section-dark">
     <div class="container">
@@ -445,14 +541,14 @@
               <h4>ORRENT</h4>
               <p>Agence de conseil en marketing digital pour entrepreneurs — fondée en janvier 2026.</p>
               <div class="project-links">
-                <a href="#" class="project-brand-btn project-btn-ig" target="_blank" rel="noopener" aria-label="Instagram ORRENT">
+                <a href="https://www.instagram.com/orrent_comores/" class="project-brand-btn project-btn-ig" target="_blank" rel="noopener" aria-label="Instagram ORRENT">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
                   Instagram
                 </a>
-                <a href="#" class="project-brand-btn project-btn-li" target="_blank" rel="noopener" aria-label="LinkedIn ORRENT">
+                <span class="project-brand-btn project-btn-li">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
                   LinkedIn
-                </a>
+                </span>
               </div>
             </div>
           </div>
@@ -577,8 +673,7 @@
       <div class="contact-grid">
 
         <div class="contact-form-wrap reveal">
-          <!-- Remplacer VOTRE_ID_FORMSPREE par votre endpoint Formspree (formspree.io) -->
-          <form class="contact-form" id="contactForm" action="https://formspree.io/f/VOTRE_ID_FORMSPREE" method="POST">
+          <form class="contact-form" id="contactForm" novalidate>
             <div class="form-group">
               <label for="name">Nom complet</label>
               <div class="input-shell">
@@ -600,15 +695,16 @@
             <div class="form-group">
               <label for="message">Message</label>
               <div class="input-shell">
-                <textarea id="message" name="message" rows="5" placeholder="Décrivez votre projet ou opportunité..." required></textarea>
+                <textarea id="message" name="message" rows="5" placeholder="Décrivez votre projet ou opportunité..." required maxlength="500"></textarea>
               </div>
+              <span class="char-counter" id="charCounter">0 / 500</span>
             </div>
             <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
               <span>Envoyer le message</span>
               <span class="btn-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
             </button>
             <div class="form-success" id="formSuccess" hidden>
-              Message envoyé — Je vous réponds sous 24h.
+              Votre client email va s'ouvrir avec le message pré-rempli.
             </div>
             <div class="form-error" id="formError" hidden>
               Erreur lors de l'envoi. Réessayez ou écrivez à athoumaniyas@gmail.com
@@ -637,7 +733,7 @@
                 </div>
                 <div>
                   <span class="info-label">WhatsApp</span>
-                  <a href="https://wa.me/21651353948" class="contact-value contact-wa-value" target="_blank" rel="noopener">+216 51 353 948</a>
+                  <a href="tel:+21651353948" class="contact-value contact-wa-value">+216 51 353 948</a>
                 </div>
               </div>
               <div class="contact-item">
@@ -689,7 +785,33 @@
     </svg>
   </button>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Yasser Athoumani",
+    "jobTitle": "Consultant en Marketing Digital",
+    "url": "https://yasserathoumani95-maker.github.io/yasser-portfolio/",
+    "email": "athoumaniyas@gmail.com",
+    "telephone": "+21651353948",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Tunis",
+      "addressCountry": "TN"
+    },
+    "sameAs": ["https://www.linkedin.com/in/athoumani-yasser/"],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "ORRENT"
+    },
+    "knowsLanguage": ["fr", "ar", "en"],
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Collège de Paris — Campus Tunis"
+    }
+  }
+  </script>
 </body>
 </html>
 
