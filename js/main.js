@@ -19,7 +19,7 @@ const submitBtn     = document.getElementById('submitBtn');
 /* === TYPEWRITER === */
 const phrases = [
   'Consultant en Marketing Digital',
-  'Community Manager',
+  'Social Media Manager',
   "Fondateur d'ORRENT"
 ];
 let phraseIdx  = 0;
@@ -223,6 +223,24 @@ if (textarea && charCounter) {
     charCounter.style.color = len > 450 ? '#dc2626' : 'rgba(0,0,0,0.3)';
   });
 }
+
+/* === DARK / LIGHT MODE TOGGLE === */
+const themeToggle = document.getElementById('themeToggle');
+const htmlEl      = document.documentElement;
+
+function applyTheme(theme) {
+  htmlEl.setAttribute('data-theme', theme);
+  localStorage.setItem('theme', theme);
+}
+
+// Restore saved preference, fallback to dark
+const savedTheme = localStorage.getItem('theme') || 'dark';
+applyTheme(savedTheme);
+
+themeToggle.addEventListener('click', () => {
+  const next = htmlEl.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  applyTheme(next);
+});
 
 /* === INIT === */
 window.addEventListener('scroll', onScroll, { passive: true });
