@@ -43,7 +43,7 @@ input, textarea, select { font-family: inherit; }
   --border-dark:  rgba(255,255,255,0.08);
   --border-light: rgba(0,0,0,0.06);
 
-  --font-display: 'Syne', 'Montserrat', sans-serif;
+  --font-display: 'Montserrat', sans-serif;
   --font-body:    'Plus Jakarta Sans', sans-serif;
 
   --r-sm:   8px;
@@ -143,7 +143,7 @@ body::after {
 
 .nav-logo {
   font-family: var(--font-display);
-  font-weight: 800;
+  font-weight: 900;
   font-size: 1.1875rem;
   background: var(--grad);
   -webkit-background-clip: text;
@@ -283,7 +283,7 @@ body::after {
 }
 .mobile-logo {
   font-family: var(--font-display);
-  font-weight: 800;
+  font-weight: 900;
   font-size: 1.25rem;
   background: var(--grad);
   -webkit-background-clip: text;
@@ -466,13 +466,16 @@ body::after {
   border-color: rgba(1,153,119,0.15);
 }
 
+/* La colonne texte ne doit jamais déborder de la grille */
+.hero-text { min-width: 0; }
+
 /* Nom : ligne 1 en contour, ligne 2 en dégradé */
 .hero-name {
   font-family: var(--font-display);
-  font-size: clamp(2.75rem, 7.5vw, 5.625rem);
-  font-weight: 800;
+  font-size: clamp(2.625rem, 6.5vw, 5.25rem);
+  font-weight: 900;
   line-height: 0.98;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.025em;
   color: transparent;
   -webkit-text-stroke: 1.5px rgba(255,255,255,0.85);
   margin-bottom: 1.125rem;
@@ -652,48 +655,20 @@ body::after {
   width: 340px;
   height: 340px;
   border-radius: 50%;
-  padding: 3px;
+  background: rgba(2,195,154,0.05);
+  border: 1px solid rgba(2,195,154,0.14);
+  padding: 8px;
   position: relative;
 }
-/* Anneau conique net */
-.avatar-shell::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  background: conic-gradient(
-    from 0deg,
-    transparent 0%,
-    transparent 32%,
-    rgba(2,195,154,0.9) 46%,
-    #8CF7DF 52%,
-    rgba(2,195,154,0.9) 58%,
-    transparent 72%,
-    transparent 100%
-  );
-  animation: ring-spin 7s linear infinite;
-  will-change: transform;
-}
-/* Halo flou qui suit l'anneau */
+/* Halo statique doux derrière la photo */
 .avatar-shell::after {
   content: '';
   position: absolute;
-  inset: -14px;
+  inset: -28px;
   border-radius: 50%;
-  background: conic-gradient(
-    from 0deg,
-    transparent 0%,
-    transparent 32%,
-    rgba(2,195,154,0.55) 50%,
-    transparent 72%,
-    transparent 100%
-  );
-  filter: blur(22px);
-  animation: ring-spin 7s linear infinite;
-  will-change: transform;
+  background: radial-gradient(circle, rgba(2,195,154,0.07) 0%, transparent 65%);
   pointer-events: none;
 }
-@keyframes ring-spin { to { transform: rotate(1turn); } }
 
 .avatar-core {
   width: 100%;
@@ -722,7 +697,7 @@ body::after {
 .avatar-initials {
   font-family: var(--font-display);
   font-size: 5.5rem;
-  font-weight: 800;
+  font-weight: 900;
   background: var(--grad);
   -webkit-background-clip: text;
   background-clip: text;
@@ -845,8 +820,8 @@ a.hero-badge:hover {
 
 .section-title {
   font-family: var(--font-display);
-  font-size: clamp(2.125rem, 5.2vw, 3.625rem);
-  font-weight: 800;
+  font-size: clamp(2rem, 5vw, 3.375rem);
+  font-weight: 900;
   line-height: 1.02;
   letter-spacing: -0.025em;
   color: #fff;
@@ -975,7 +950,7 @@ a.hero-badge:hover {
 .stat-number {
   font-family: var(--font-display);
   font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: 800;
+  font-weight: 900;
   background: var(--grad);
   -webkit-background-clip: text;
   background-clip: text;
@@ -986,7 +961,7 @@ a.hero-badge:hover {
 .stat-suffix {
   font-family: var(--font-display);
   font-size: clamp(1.5rem, 3vw, 2.25rem);
-  font-weight: 800;
+  font-weight: 900;
   color: var(--green);
   padding-bottom: 0.25rem;
 }
@@ -1468,7 +1443,7 @@ a.hero-badge:hover {
 .step-number {
   font-family: var(--font-display);
   font-size: 2.75rem;
-  font-weight: 800;
+  font-weight: 900;
   color: rgba(0,0,0,0.08);
   line-height: 1;
   transition: color 0.35s var(--spring);
@@ -1736,7 +1711,7 @@ a.hero-badge:hover {
 }
 .footer-logo {
   font-family: var(--font-display);
-  font-weight: 800;
+  font-weight: 900;
   font-size: 1.25rem;
   background: var(--grad);
   -webkit-background-clip: text;
@@ -2225,7 +2200,7 @@ a:focus-visible, button:focus-visible { outline-offset: 4px; }
   .hero-role-wrapper   { justify-content: center; }
 
   .avatar-shell    { width: 190px; height: 190px; }
-  .avatar-shell::after { inset: -10px; filter: blur(16px); }
+  .avatar-shell::after { display: none; }
   .avatar-initials { font-size: 3rem; }
 
   /* Marquee */
@@ -2300,7 +2275,6 @@ a:focus-visible, button:focus-visible { outline-offset: 4px; }
   .cursor { animation: none !important; }
   .stat-number { transition: none; }
   .hero-bg-glow, .hero-bg-glow-2 { animation: none; }
-  .avatar-shell::before, .avatar-shell::after { animation: none; }
   .marquee-track { animation: none; flex-wrap: wrap; width: auto; justify-content: center; }
   .btn::before { display: none; }
 }
